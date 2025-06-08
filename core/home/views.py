@@ -12,10 +12,12 @@ def home(request):
         {'name':'pushpa','age':56},
         {'name':'Goremon','age':9},
     ]
-    return render(request,"home_folder/index.html",context={"peoples":peoples})
+    return render(request,"home_folder/index.html",context={"peoples":peoples,'page':'Home Page'})
 
 def contact(request):
-    return render(request,"home_folder/contact.html")
+    context= {'page':'Contact Page'}
+    return render(request,"home_folder/contact.html",context)
 
 def about(request):
-    return render(request,"home_folder/about.html")
+    context= {'page':'About Page'}
+    return render(request,"home_folder/about.html",context)
